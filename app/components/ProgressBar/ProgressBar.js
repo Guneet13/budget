@@ -1,18 +1,18 @@
 import React, {Component} from 'react';
-import {View, StyleSheet, Text} from 'react-native';
+import {View, Text} from 'react-native';
+import {formatPrice} from '../helpers';
+import styles from '../css/styles';
 
-const Category = 'Food';
-
-export default function ProgressBar() {
-  return (
-    <View styles={styles.progress_container}>
-      <Text>{Category}</Text>
-    </View>
-  );
+class ProgressBar extends Component {
+  render() {
+    const {amount, expenses} = this.props.details;
+    return (
+      <View style={styles.progress_container}>
+        <Text style={styles.progressText}>
+          {formatPrice(amount - expenses)} / {formatPrice(amount)}
+        </Text>
+      </View>
+    );
+  }
 }
-
-const styles = StyleSheet.create({
-  progress_container: {
-    fontSize: 22,
-  },
-});
+export default ProgressBar;
