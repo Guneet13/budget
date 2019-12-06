@@ -5,14 +5,10 @@ import styles from '../css/styles';
 
 class ProgressBar extends Component {
   render() {
-    const {amount, expenses} = this.props.details;
-    return (
-      <View style={styles.progress_container}>
-        <Text style={styles.progressText}>
-          {formatPrice(amount - expenses)} / {formatPrice(amount)}
-        </Text>
-      </View>
-    );
+    //const {amount, expenses} = this.props.details;<Text style={styles.progressText}>
+          //{formatPrice(amount - expenses)} / {formatPrice(amount)}
+          //</Text>
+    return <View style={styles.progress_container} />;
   }
 }
 export default ProgressBar;
